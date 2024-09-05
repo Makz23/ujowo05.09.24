@@ -11,11 +11,15 @@ def main():
         print("Admin panel: You can manage users.")
         while True:
             try:
-                choice = input("Do you want to add a new employee? (y/n): ").lower()
-                if choice not in ["y", "n"]:
-                    raise ValueError("Invalid choice. Please enter 'y' for yes or 'n' for no.")
-                
-                if choice == "y":
+                print("\nOptions: ")
+                print("1. Add a new employee")
+                print("2. Edit an existing employee")
+                print("3. Edit user roles")
+                print("4. Exit")
+
+                choice = input("Choose an option: ").strip()
+
+                if choice == "1":
                     name = input("Enter name: ")
                     surname = input("Enter surname: ")
                     position = input("Enter position: ")
@@ -23,9 +27,26 @@ def main():
                     work_telephone = input("Enter work telephone: ")
                     Employee(name, surname, position, account_number, work_telephone)
                     print("Employee added successfully!")
-                break 
+
+                elif choice == "2":
+                    employees = EmployeeManager.from_json('system_members.json')
+                    print("Employees:")
+                    for emp in employees:
+                        print(f"{emp.unique_id}: {emp.name} {emp.surname}")
+                    emp_id = input("Enter the ID of the employee to edit: ")
+                    EmployeeManager.edit_employee('system_members.json', emp_id)
+
+                elif choice == "3":
+                    auth.edit_user_role()
+
+                elif choice == "4":
+                    print("Exiting admin panel.")
+                    break
+
+                else:
+                    raise ValueError("Invalid option. Please select a valid number.")
             except ValueError as e:
-                print(e)  
+                print(e)
 
     elif role == "user":
         print("User panel: You can view employees.")
