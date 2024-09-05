@@ -1,0 +1,26 @@
+[
+    {
+        "unique_id": "123e4567-e89b-12d3-a456-426614174000",
+        "name": "Jason",
+        "surname": "Bourne",
+        "position": "Software Engineer",
+        "account_number": "123456789",
+        "work_telephone": "555-0123"
+    },
+    {
+        "unique_id": "123e4567-e89b-12d3-a456-426614174001",
+        "name": "Ethan",
+        "surname": "Hunt",
+        "position": "Secret Agent",
+        "account_number": "987654321",
+        "work_telephone": "555-0456"
+    },
+    {
+        "unique_id": "123e4567-e89b-12d3-a456-426614174002",
+        "name": "Lara",
+        "surname": "Croft",
+        "position": "Archaeologist",
+        "account_number": "567890123",
+        "work_telephone": "555-0789"
+    }
+]
