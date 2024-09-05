@@ -9,7 +9,7 @@ class Authentication:
         }
 
     def login(self):
-        while True:  # Pętla, która wymaga poprawnych danych logowania
+        while True:  
             try:
                 username = input("Enter username: ")
                 password = input("Enter password: ")
@@ -20,7 +20,7 @@ class Authentication:
                 else:
                     raise ValueError("Invalid credentials, try again.")
             except ValueError as e:
-                print(e)  # Wyświetla wiadomość o błędzie i ponawia logowanie
+                print(e)  
 
     def save_users(self):
         with open('users.json', 'w') as file:
